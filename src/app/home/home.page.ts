@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessageService } from '../message.service'; 
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public inputMessage: string = '';
 
-  constructor() {}
+  constructor(private messageService: MessageService) {}
 
+  enviarMensaje() {
+    this.messageService.setMessage(this.inputMessage);
+  }
+
+  borrarMensaje() {
+    this.messageService.clearMessage();
+    this.inputMessage = '';
+  }
+
+  get displayMessage(): string {
+    return this.messageService.getMessage();
+  }
 }
+

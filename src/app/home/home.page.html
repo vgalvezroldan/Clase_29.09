@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Ejercicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <br>
+  <h1 style="text-align: center; color: black;"><b>{{ displayMessage }}</b></h1>
+  <br>
+  <ion-input [(ngModel)]="inputMessage" style="text-align: center; color: black;" placeholder="Escribe el mensaje"></ion-input>
+  <br>
+  <ion-button (click)="enviarMensaje()" style="text-align: center;" expand="block">Enviar</ion-button>
+  <ion-button (click)="borrarMensaje()" style="text-align: center;" expand="block">Borrar</ion-button>
 </ion-content>
